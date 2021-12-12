@@ -1,0 +1,51 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : Mysql - Local
+ Source Server Type    : MySQL
+ Source Server Version : 100420
+ Source Host           : localhost:3306
+ Source Schema         : buku_tamu_identik
+
+ Target Server Type    : MySQL
+ Target Server Version : 100420
+ File Encoding         : 65001
+
+ Date: 22/11/2021 11:10:38
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for buku_tamu
+-- ----------------------------
+DROP TABLE IF EXISTS `buku_tamu`;
+CREATE TABLE `buku_tamu`  (
+  `id_tamu` int NOT NULL AUTO_INCREMENT,
+  `nik` varchar(16) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `nama` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `foto` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `tanggal_masuk` date NULL DEFAULT NULL,
+  `tanggal_keluar` date NULL DEFAULT NULL,
+  `ttl` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `agama` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `status_kawin` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `pekerjaan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `kewarganegaraan` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `no_tamu` decimal(10, 0) NULL DEFAULT NULL,
+  `tujuan` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `keperluan` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `no_hp` decimal(12, 0) NULL DEFAULT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `status` enum('','IN','OUT') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id_tamu`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of buku_tamu
+-- ----------------------------
+INSERT INTO `buku_tamu` VALUES (1, '3217021312424242', 'MUHAMMAD SYAIBANI ZAHRAN', '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', '2021-03-31', '2021-03-31', 'JAKARTA / 25-8-1999', 'JAWA BARAT, KABUPATEN BANDUNG BARAT, NGAMPRAH, CILAME, TAMAN BUNGA CILAME, RT 011, RW 023, ', 'ISLAM', 'BELUM KAWIN', 'PELAJAR/MAHASISWA', 'WNI', 10, 'pa rawosi', 'bbinis', 628986487099, 'jondudu@mail.com', 'OUT');
+
+SET FOREIGN_KEY_CHECKS = 1;
